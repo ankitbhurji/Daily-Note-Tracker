@@ -1,0 +1,16 @@
+.noteContainer{
+    height: 480px;
+    /* background-color: cyan; */
+    overflow: auto;
+}
+.note{
+    background-color: #F0F0F0;
+    opacity: 0.8;
+    border-radius: 8px;
+    /* padding: 10px; */
+    margin-bottom: 10px;
+    overflow: auto;
+}
+.date{
+    float: right;
+}

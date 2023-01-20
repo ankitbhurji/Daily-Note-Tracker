@@ -3,9 +3,11 @@ import DailyNoteTracker from '../../images/DailyNoteTracker.svg';
 import DailyNotes from '../../images/DailyNotes.svg';
 import BookMarks from '../../images/BookMarks.svg';
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
-function ToggleWindow() {
-
+function ToggleWindow(props) {
+    
+    let navigate = useNavigate();
     const [toggle, setToggle] = useState({
         notesKey:false,
         bookMarksKey:false
@@ -13,10 +15,15 @@ function ToggleWindow() {
 
     function clickNotes(){
         setToggle({...toggle, notesKey:!toggle.notesKey, bookMarksKey:false})
+        navigate('/notes')
     }
     function clickBookmarks(){
         setToggle({...toggle, notesKey:false, bookMarksKey:!toggle.bookMarksKey})
+        navigate('/bookmarks')
+        
     }
+
+ 
 
     return ( 
         <div>
