@@ -12,9 +12,9 @@ function Bookmarks(props) {
                     if(!data.bookmark==''){
                         return(
                             <div key={index}>
-                                <div className='row m-3'>
+                                <div className='row m-2'>
                                     <div className={styles.note}>
-                                        <a href={data.bookmark}>{data.bookmark}</a>
+                                        <a href={data.bookmark} target="_blank">{data.bookmark}</a><br/>
                                         <p className={styles.date}>{data.time}</p>
                                     </div>
                                 </div>

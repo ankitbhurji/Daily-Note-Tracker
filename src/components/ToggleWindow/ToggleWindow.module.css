@@ -1,5 +1,6 @@
 .container{
-    background-color: white;
+    /* background-color: white; */
+    background-color: rgba(4, 16, 18, 0.25);
     height: 80vh;
     position: fixed;
     width: 400px;
@@ -25,7 +26,8 @@ button{
   
 }
 .buttonActive{
-    background-color:#F0F0F0;
+    /* background-color:#F0F0F0; */
+    background-color: rgba(4, 16, 18, 0.25);
 }
 
 
@@ -33,8 +35,7 @@ button{
     background-color: #806BFF;
     border-radius: 50%;
     width: 40px;
-    height: 40px; 
-  
+    height: 40px;
 }
 .dailyNotes img{
     padding: 10px;

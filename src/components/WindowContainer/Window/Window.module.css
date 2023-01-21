@@ -1,5 +1,6 @@
 .container{
     background-color: rgba(4, 16, 18, 0.25);
+    /* background-color: white; */
     height: 80vh;
     position: fixed;
     width: 700px;
@@ -13,9 +14,9 @@
     height: 55px;
     /* background-color: white; */
     width: 700px;
-    padding: 8px;
+    /* padding: 8px; */
     margin-left: 22px;
-    margin-bottom: 60px;
+    margin-bottom: 75px;
 }
 
 input{
@@ -44,7 +45,7 @@ input:focus{
     margin-left: 25px;
     position: fixed; 
     bottom:0%;
-    margin-bottom: 68px;
+    margin-bottom: 92px;
 }
 img{
     margin-bottom: 4px;

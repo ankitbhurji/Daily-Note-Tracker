@@ -10,27 +10,23 @@ function Window() {
     let {ctg} = useParams()
     var date = new Date()
     var dateTime = date.toLocaleString("en-NZ")
+    const [message, setMessage]=useState('');
 
-    const [message, setMessage]=useState('');  
 
     const [notes, setNotes] = useState([
         {note:'', time:''}
     ]);
-    const [LocalNotes, SetLocalNotes] = useState([])
-
+    
     const [bookMarks, setbookMarks] = useState([
         {bookmark:'', time:''}
     ]);
+    
+    // const [LocalNotes, setLocalNotes] = useState()
+    // const [LocalBookMarks, setLocalBookMarks] = useState()
 
-    // console.log(LocalNotes)
+
     function InputChange(e){
         setMessage(e.target.value)
-    }
-
-    const  LocalData = () =>{
-        console.log(notes)
-        localStorage.setItem("localNotesData", JSON.stringify(notes))
-        SetLocalNotes(JSON.parse(localStorage.getItem("localNotesData")))
     }
    
     function clickMessage(){
@@ -43,25 +39,40 @@ function Window() {
                 setbookMarks(bookMarks=>[...bookMarks, {bookmark:message, time:dateTime}])
             }
         }
-        setMessage('')
+        setMessage('');
     }
 
     function KeyPress(e){
         if(e.key==="Enter"){
-            clickMessage()
+            clickMessage();
         }
     }
 
+
+
+    
+
     useEffect(()=>{
-        LocalData()
-    }, [notes])
- 
+        // let getLocalNotes = localStorage.getItem("LocalNotes");
+        // let getLocalBookMarks = localStorage.getItem("BookMarksNotes");
+        // setLocalNotes(getLocalNotes);
+        // setLocalBookMarks(getLocalBookMarks);
+
+        localStorage.setItem("LocalNotes", JSON.stringify(notes));
+        localStorage.setItem("BookMarksNotes", JSON.stringify(bookMarks));
+
+        // let getLocalNotes = localStorage.getItem("LocalNotes");
+        // setNotes(getLocalNotes)
+        
+    }, [])
+
+    
     
     return ( 
         <div>
              <div className={styles.container}>
                 <div className='row'>
-                    {ctg=='notes'?(<Note notes={LocalNotes}/>):ctg=='bookmarks'?(<Bookmarks bookMarks={bookMarks}/>):('')}
+                    {ctg=='notes'?(<Note notes={notes} />):ctg=='bookmarks'?(<Bookmarks bookMarks={bookMarks}/>):('')}
                 </div>
                 <div className={styles.inputContainer}>
                     <div className='row'>
