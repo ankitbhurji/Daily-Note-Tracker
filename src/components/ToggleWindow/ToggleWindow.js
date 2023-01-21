@@ -20,10 +20,7 @@ function ToggleWindow(props) {
     function clickBookmarks(){
         setToggle({...toggle, notesKey:false, bookMarksKey:!toggle.bookMarksKey})
         navigate('/bookmarks')
-        
     }
-
- 
 
     return ( 
         <div>
