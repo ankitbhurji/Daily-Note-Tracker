@@ -22,7 +22,7 @@ function Window() {
         {bookmark:'', time:''}
     ]);
 
-    console.log(LocalNotes)
+    // console.log(LocalNotes)
     function InputChange(e){
         setMessage(e.target.value)
     }

@@ -5,9 +5,9 @@ import Home from "./Home/Home";
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path="/" component = {()=>{<Home />}}/>
-        <Route path="/:ctg" component = {()=>{<Home />}}/>
+      <Routes basename="/">
+        <Route path="/" element={<Home/>}/>
+        <Route path="/:ctg" element={<Home/>}/>
       </Routes>
     </div>
   );
