@@ -8,10 +8,10 @@ function Bookmarks(props) {
         <div>
             <div className={styles.noteContainer}>
              {
-                bookmark.map((data)=>{
+                bookmark.map((data, index)=>{
                     if(!data.bookmark==''){
                         return(
-                            <div>
+                            <div key={index}>
                                 <div className='row m-3'>
                                     <div className={styles.note}>
                                         <a href={data.bookmark}>{data.bookmark}</a>

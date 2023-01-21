@@ -8,10 +8,10 @@ function Note(props) {
         <div className={styles.noteContainer}>
              <div className='row m-3'>
                 {
-                    notes.map((data)=>{
+                    notes.map((data, index)=>{
                         if(!data.note==''){
                             return(
-                                <div>
+                                <div key={index}>
                                    <div className={styles.note}>
                                        <p>{data.note}</p>
                                        <p className={styles.date}>{data.time}</p>
