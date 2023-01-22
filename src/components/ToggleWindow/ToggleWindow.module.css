@@ -1,6 +1,6 @@
 .container{
-    /* background-color: white; */
-    background-color: rgba(4, 16, 18, 0.75);
+    background-color: rgb(255, 255, 255, 0.8);
+    /* background-color: rgba(4, 16, 18, 0.75); */
     height: 80vh;
     position: fixed;
     /* width: 400px; */
@@ -28,7 +28,7 @@ button{
 }
 .buttonActive{
     /* background-color:#F0F0F0; */
-    background-color: rgba(4, 16, 18, 0.25);
+    background-color: rgba(4, 16, 18, 0.20);
 }
 
 .dailyNotes{
