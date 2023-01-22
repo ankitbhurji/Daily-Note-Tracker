@@ -3,7 +3,26 @@ import arrow from '../../../images/Arrow.svg'
 import React, { useEffect, useState } from 'react';
 import Note from '../Note/Note';
 import Bookmarks from '../Bookmarks/Bookmarks';
-import { json, useParams } from "react-router-dom";
+import {json, useParams } from "react-router-dom";
+
+const  getNotes = () => {
+
+    let getLocalNotes = JSON.parse(localStorage.getItem("LocalNotes")) || null;
+    if(getLocalNotes){
+    return JSON.parse(localStorage.getItem("LocalNotes"));
+    }else{
+        return []
+    }
+}
+
+const getBookMarks = () => {
+    let getLocalBookmarks = JSON.parse(localStorage.getItem("LocalBookMarks")) || null;
+    if(getLocalBookmarks){
+        return JSON.parse(localStorage.getItem("LocalBookMarks"));
+        }else{
+            return []
+        }
+}
 
 function Window() {
 
@@ -12,19 +31,48 @@ function Window() {
     var dateTime = date.toLocaleString("en-NZ")
     const [message, setMessage]=useState('');
 
+    // const [notes, setNotes] = useState(getNotes())
+    // const [bookMarks, setbookMarks] = useState({})
 
-    const [notes, setNotes] = useState([
-        {note:'', time:''}
-    ]);
+
+
+//trial mode......................
+//     function InputChange(e){
+//         setMessage(e.target.value)
+//     }
     
-    const [bookMarks, setbookMarks] = useState([
-        {bookmark:'', time:''}
-    ]);
     
-    // const [LocalNotes, setLocalNotes] = useState()
-    // const [LocalBookMarks, setLocalBookMarks] = useState()
+//     function KeyPress(e){
+//         if(e.key==="Enter"){
+//             clickMessage();
+//             setMessage('');
+//         }
+//     }
+
+//     function clickMessage(){
+//         setNotes(notes=>[...notes, {note:message, time:dateTime}])
+//         // localStorage.setItem("LocalNotes", JSON.stringify(notes));
+//         // let getNotes = JSON.parse(localStorage.getItem("LocalNotes"));
+//         // console.log(getNotes)
+//     }
+    
+// useEffect(()=>{
+//     localStorage.setItem("LocalNotes", JSON.stringify(notes));
+// }, [notes]);
+    
+
+    
 
 
+
+
+
+
+// not allowed...........
+
+    const [notes, setNotes] = useState(getNotes());
+    const [bookMarks, setbookMarks] = useState(getBookMarks());
+  
     function InputChange(e){
         setMessage(e.target.value)
     }
@@ -48,23 +96,10 @@ function Window() {
         }
     }
 
-
-
-    
-
     useEffect(()=>{
-        // let getLocalNotes = localStorage.getItem("LocalNotes");
-        // let getLocalBookMarks = localStorage.getItem("BookMarksNotes");
-        // setLocalNotes(getLocalNotes);
-        // setLocalBookMarks(getLocalBookMarks);
-
         localStorage.setItem("LocalNotes", JSON.stringify(notes));
-        localStorage.setItem("BookMarksNotes", JSON.stringify(bookMarks));
-
-        // let getLocalNotes = localStorage.getItem("LocalNotes");
-        // setNotes(getLocalNotes)
-        
-    }, [])
+        localStorage.setItem("LocalBookMarks", JSON.stringify(bookMarks));
+    }, [notes, bookMarks])
 
     
     
