@@ -5,53 +5,50 @@ import BookMarks from '../../images/BookMarks.svg';
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
-function ToggleWindow(props) {
-    
+
+function ToggleWindow() {
     let navigate = useNavigate();
     const [toggle, setToggle] = useState({
-        notesKey:false,
-        bookMarksKey:false
+        isNotes:false,
+        isBookMarks:false
     })
 
-    function clickNotes(){
-        setToggle({...toggle, notesKey:!toggle.notesKey, bookMarksKey:false})
+    const NotesClick  = () => {
+        setToggle({...toggle, isNotes:true, isBookMarks:false})
         navigate('/notes')
     }
-    function clickBookmarks(){
-        setToggle({...toggle, notesKey:false, bookMarksKey:!toggle.bookMarksKey})
+    const BookMarksClick = () => {
+        setToggle({...toggle, isBookMarks:true, isNotes:false})
         navigate('/bookmarks')
     }
 
+
     return ( 
         <div>
-            <div className={styles.container}>
-                <div className={styles.header}>
-                    <div className='row p-2'>
-                    <div className='col-2'><img src={DailyNoteTracker}/></div>
-                    <div className='col-10'><p>DAILY NOTE TRACKER</p></div>
+            <div className={styles.DailyNoteTracker}>
+                <div className='row'>
+                    <div className='d-flex'>
+                        <div className={styles.DailyTrackerImage}><img src={DailyNoteTracker} /></div>
+                        <div><p>DAILY NOTES TRACKER</p></div>
                     </div>
                 </div>
-                <button onClick={clickNotes} className={toggle.notesKey?styles.buttonActive:''}>
-                    <div className='row p-2'>
-                        <div className='col-2'>
-                            <div className={styles.dailyNotes}><img src={DailyNotes}/></div>
-                        </div>
-                        <div className='col-10'>
-                            <div className={styles.dailyNotesFont}>Daily Notes</div>
-                        </div>
-                    </div>
-                </button>
-                <button onClick={clickBookmarks} className={toggle.bookMarksKey?styles.buttonActive:''}>
-                    <div className='row p-2'>
-                        <div className='col-2'>
-                            <div className={styles.bookMarks}><img src={BookMarks}/></div>
-                        </div>
-                        <div className='col-10'>
-                            <div className={styles.bookMarksFont}>BookMarks</div>
-                        </div>
-                    </div>
-                </button>
             </div>
+            <button onClick={NotesClick} className={toggle.isNotes?(`${styles.DailyNotes} ${styles.buttonActive}`):(`${styles.DailyNotes}`)}>
+                <div className='row'>
+                    <div className='d-flex m-3'>
+                        <div className={styles.DailyNotesImage}><img src={DailyNotes} /></div>
+                        <div><p>Daily Notes</p></div>
+                    </div>
+                </div>
+            </button>
+            <button onClick={BookMarksClick} className={toggle.isBookMarks?(`${styles.BookMarks} ${styles.buttonActive}`):(`${styles.BookMarks}`)}>
+                <div className='row'>
+                    <div className='d-flex m-3'>
+                        <div className={styles.BookMarksImage}><img src={BookMarks} /></div>
+                        <div><p>Bookmarks</p></div>
+                    </div>
+                </div>
+            </button>
         </div>
      );
 }

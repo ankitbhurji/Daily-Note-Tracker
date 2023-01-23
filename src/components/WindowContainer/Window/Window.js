@@ -3,7 +3,8 @@ import arrow from '../../../images/Arrow.svg'
 import React, { useEffect, useState } from 'react';
 import Note from '../Note/Note';
 import Bookmarks from '../Bookmarks/Bookmarks';
-import {json, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Select from '../Select/Select';
 
 const  getNotes = () => {
 
@@ -31,52 +32,13 @@ function Window() {
     var dateTime = date.toLocaleString("en-NZ")
     const [message, setMessage]=useState('');
 
-    // const [notes, setNotes] = useState(getNotes())
-    // const [bookMarks, setbookMarks] = useState({})
-
-
-
-//trial mode......................
-//     function InputChange(e){
-//         setMessage(e.target.value)
-//     }
-    
-    
-//     function KeyPress(e){
-//         if(e.key==="Enter"){
-//             clickMessage();
-//             setMessage('');
-//         }
-//     }
-
-//     function clickMessage(){
-//         setNotes(notes=>[...notes, {note:message, time:dateTime}])
-//         // localStorage.setItem("LocalNotes", JSON.stringify(notes));
-//         // let getNotes = JSON.parse(localStorage.getItem("LocalNotes"));
-//         // console.log(getNotes)
-//     }
-    
-// useEffect(()=>{
-//     localStorage.setItem("LocalNotes", JSON.stringify(notes));
-// }, [notes]);
-    
-
-    
-
-
-
-
-
-
-// not allowed...........
-
     const [notes, setNotes] = useState(getNotes());
     const [bookMarks, setbookMarks] = useState(getBookMarks());
-  
+
     function InputChange(e){
         setMessage(e.target.value)
     }
-   
+
     function clickMessage(){
         if(ctg=='notes'){
             if(!message==''){
@@ -101,31 +63,26 @@ function Window() {
         localStorage.setItem("LocalBookMarks", JSON.stringify(bookMarks));
     }, [notes, bookMarks])
 
-    
-    
-    return ( 
+    return(
         <div>
-             <div className={styles.container}>
+            <div className={styles.winodowContainer}>
                 <div className='row'>
-                    {ctg=='notes'?(<Note notes={notes} />):ctg=='bookmarks'?(<Bookmarks bookMarks={bookMarks}/>):('')}
+                    {ctg=='notes'?(<Note notes={notes} />):ctg=='bookmarks'?(<Bookmarks bookMarks={bookMarks}/>):(<Select/>)}
                 </div>
-                <div className={styles.inputContainer}>
+                
+                <div className={styles.input}>
                     <div className='row'>
                         <div className='col-10'>
-                            <div className={styles.inputs}>
-                                <input onChange={InputChange} onKeyPress={KeyPress} value={message} type='text' placeholder={ctg=='notes'?("Type a Daily Notes"):ctg=='bookmarks'?("Type a Book Mark"):('')} required/>
-                            </div>
+                            <input onChange={InputChange} onKeyPress={KeyPress} value={message} placeholder={ctg=='notes'?("Type a Daily Notes..."):ctg=='bookmarks'?("Type a Book Mark..."):('')}/>
                         </div>
-                        <div className='col-2 p-2'>
-                            <button onClick={clickMessage} className={styles.arrow}>
-                                <img src={arrow}/>
-                            </button>
-                        </div>
+                        <button onClick={clickMessage} className='col-2'>
+                            <div className={styles.icon}><img src={arrow}/></div>
+                        </button>
                     </div>
-                </div>      
+                </div>
             </div>
         </div>
-     );
+    )
 }
 
 export default Window;

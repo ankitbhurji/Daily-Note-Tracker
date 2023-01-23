@@ -1,0 +1,23 @@
+.NoteContainer{
+    /* background-color: blue; */
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 520px;
+    padding: 15px;
+    overflow: auto;
+}
+.notes{
+    padding: 100px;
+    /* background-color: gray; */
+    border-radius: 8px;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 50px;
+    opacity: 0.5;
+}
+.note{
+    color: rgb(77, 69, 69);
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+

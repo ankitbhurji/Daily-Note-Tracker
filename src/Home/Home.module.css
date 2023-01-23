@@ -1,7 +1,23 @@
 body{
     background-image: url('../images/Bg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 80px;
 }
+.HomeContainer {
+    font-family: arial;
+    font-size: 24px;
+    margin: 50px;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;    
+    }
+
+    .toggle{
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 400px;
+    }
+    .window{
+        background-color: rgba(255, 255, 255, 0.4);
+        width: 600px;
+    }

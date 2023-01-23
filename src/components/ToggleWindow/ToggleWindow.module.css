@@ -1,62 +1,79 @@
-.container{
-    background-color: rgb(255, 255, 255, 0.8);
-    /* background-color: rgba(4, 16, 18, 0.75); */
-    height: 80vh;
-    position: fixed;
-    /* width: 400px; */
-    width: 420px;
-    margin-left: 100px;
-}
-.header{
+.DailyNoteTracker{
     background-color: #3DA577;
-    padding: 10px;
-    color: white;
-    width: 100%;
-    float: left;
 }
-.header p{
-    float: left;
-    margin-top: 6px;
+.DailyNoteTracker p{
+    margin-top: 16px;
     font-weight: bold;
+    font-size: 25px;
+    color: white;
+    font-family: Montserrat;
+    word-spacing: 2px;
+}
+.DailyTrackerImage{
+padding: 14px;
+}
+.DailyTrackerImage img{
+    margin-left: 15px;
 }
 
+/* style button and active */
 button{
-  border: none;
-  background-color:white;
-  padding: 5px;
-  width: 100%;
-  
+    width: 100%;
+    border: none;
+    background: none;
+    
 }
 .buttonActive{
-    /* background-color:#F0F0F0; */
-    background-color: rgba(4, 16, 18, 0.20);
+    background-color: rgba(4, 16, 18, 0.2);
 }
 
-.dailyNotes{
-    background-color: #806BFF;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+/* style note tab */
+.DailyNotes{
+    padding-top: 5px;
 }
-.dailyNotes img{
-    padding: 10px;
-}
-.dailyNotesFont{
+.DailyNotes p{
+    margin-left: 12px;
+    margin-top: 1px;
     color: #806BFF;
-    float: left;
-    margin-top: 6px;
+    
 }
-.bookMarks{
-    background-color: #FF6B6B;
-    border-radius: 50%;
+.DailyNotesImage{
+    background-color: #806BFF;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
 }
-.bookMarks img{
+.DailyNotesImage img{
+    padding: 10px; 
+}
+.DailyNotes:hover{
     padding: 10px;
+    background-color: rgba(4, 16, 18, 0.4);
+    transition: 0.2s;
 }
-.bookMarksFont{
+
+/* style BookMarks tab */
+.BookMarks{
+    padding-top: 5px;
+}
+.BookMarks p{
+    margin-left: 12px;
+    margin-top: 1px;
     color: #FF6B6B;
-    float: left;
-    margin-top: 6px;
+    font-size: 25px;
+    font-family: Montserrat;
+}
+.BookMarksImage{
+    background-color: #FF6B6B;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.BookMarksImage img{
+    padding: 11px; 
+}
+.BookMarks:hover{
+    padding: 10px;
+    background-color: rgba(4, 16, 18, 0.4);
+    transition: 0.2s;
 }

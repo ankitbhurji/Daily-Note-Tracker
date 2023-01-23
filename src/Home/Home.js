@@ -7,12 +7,13 @@ function Home() {
 
     return ( 
         <div>
-            <div className={styles.home}>
-                <div className='d-flex flex-row'>
-                    <div className='col-4'><ToggleWindow /> </div>
-                    <div className='col-7'> <Window /> </div>
+                <div className={styles.HomeContainer}>
+                    <div className='d-flex'>
+                        <div className={styles.toggle}><ToggleWindow /> </div>
+                        <div className={styles.window}> <Window /> </div>
+                    </div>
                 </div>
-            </div>
+                
         </div>
      );
 }

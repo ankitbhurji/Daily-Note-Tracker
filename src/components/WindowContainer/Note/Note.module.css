@@ -1,54 +1,55 @@
-.noteContainer{
-    height: 480px;
-    overflow: auto;
-    padding: 15px;
-    text-align: justify;
-    font-size: 18px;
-    /* color: white; */
-    color: black;
+.NoteContainer{
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 520px;
+  padding: 15px;
+  overflow: auto;
 }
-
+.notes{
+  /* padding: 10px; */
+  background-color: #F0F0F0;
+  border-radius: 8px;
+  margin-top: 10px;
+  
+  
+}
 .note{
-    /* background-color: #F0F0F0; */
-    /* background-color: rgba(4, 16, 18, 0.25); */
-    background-color: rgb(255, 255, 255, 0.50);
-    opacity: 0.8;
-    border-radius: 8px;
-    padding-top: 20px;
+  color: rgb(77, 69, 69);
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: Montserrat;
+  width: 98%;
+  padding-right: 30px;
+  padding-left: 20px;
+  text-align: justify;
 }
-
-.note a{
-    font-family: Montserrat;
-}
-.note p{
-    font-family: Montserrat;
-    font-size: 15px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-}
-.date{
-    float: right;
+.date  p{
+  float: right;
+  margin-bottom: 5px;
+  margin-right: 3px;
+  margin-top: 5px;
+  font-size: 16px;
+  padding-right: 20px;
+  font-weight: 500;
+  font-family: Montserrat;
+  font-style: Regular;
 }
 
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    /* box-shadow: inset 0 0 5px grey;  */
-    border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgba(4, 16, 18, 0.25); 
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(4, 16, 18, 0.25); 
-  }
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgb(29, 25, 25); 
+  /* border-radius: 10px; */
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  /* border-radius: 10px; */
+}
+
