@@ -30,6 +30,7 @@
   margin-top: 5px;
   font-size: 16px;
   padding-right: 20px;
+  font-weight: 500;
   font-family: Montserrat;
   font-style: Regular;
 }
@@ -37,18 +38,19 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px rgb(29, 25, 25); 
+  /* box-shadow: inset 0 0 2px rgb(29, 25, 25);  */
   /* border-radius: 10px; */
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: gray; 
+  background: #F0F0F0; 
   /* border-radius: 10px; */
 }
 
